@@ -1,5 +1,8 @@
+# Sniperkit-Bot
+# - Status: analyzed
+
 docker-image: &docker-image
-  working_directory: /go/src/github.com/palantir/amalgomate
+  working_directory: /go/src/github.com/sniperkit/snk.fork.palantir-amalgomate
   docker:
     - image: golang:1.10.2
 
@@ -45,7 +48,7 @@ jobs:
       - *godel-cache-restore
       - *godel-version
       - *godel-cache-save
-      - run: ./godelw github-wiki --docs-dir docs --repository=git@github.com:palantir/amalgomate.wiki.git
+      - run: ./godelw github-wiki --docs-dir docs --repository=git@github.com:sniperkit/snk.fork.palantir-amalgomate.wiki.git
 
 all-tags-filter: &all-tags-filter
   filters: { tags: { only: /.*/ } }

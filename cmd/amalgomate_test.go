@@ -1,3 +1,8 @@
+/*
+Sniperkit-Bot
+- Status: analyzed
+*/
+
 // Copyright (c) 2016 Palantir Technologies Inc. All rights reserved.
 // Use of this source code is governed by the Apache License, Version 2.0
 // that can be found in the LICENSE file.
@@ -20,7 +25,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v2"
 
-	"github.com/palantir/amalgomate/amalgomate"
+	"github.com/sniperkit/snk.fork.palantir-amalgomate/amalgomate"
 )
 
 const internalDir = "internal"
@@ -381,7 +386,7 @@ func TestAmalgomateInternal(t *testing.T) {
 		require.NoError(t, err, "Case %d", i)
 
 		testOutputPath := path.Join(currTestDir, "testout")
-		currCase.want = strings.Replace(currCase.want, "{{import}}", path.Join("github.com/palantir/amalgomate/cmd", testOutputPath, internalDir, helperImportPath), -1)
+		currCase.want = strings.Replace(currCase.want, "{{import}}", path.Join("github.com/sniperkit/snk.fork.palantir-amalgomate/cmd", testOutputPath, internalDir, helperImportPath), -1)
 
 		outputStr, err := runMain(confPath, testOutputPath, "main")
 		require.NoError(t, err, "main encountered error for case %d. Output:\n%s", i, outputStr)
